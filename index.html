@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVPN Shop - Premium VPN Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a2a6c;
+            --secondary-color: #b21f1f;
+            --accent-color: #fdbb2d;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            color: #fff;
+            min-height: 100vh;
+            padding-bottom: 80px;
+            transition: background 1s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .clock-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #digital-clock {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        .apk-download {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .apk-info {
+            width: 100%;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .online-users {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .user-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .section-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .section-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .plan {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .plan:hover {
+            transform: translateY(-10px);
+            border-color: #4CAF50;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .plan h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        
+        .plan-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .plan-duration {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .flags-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .flag {
+            width: 40px;
+            height: 25px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .flag.thai {
+            background: linear-gradient(to bottom, #ED1C24 33%, #FFFFFF 33%, #FFFFFF 66%, #241D4F 66%);
+        }
+        
+        .flag.singapore {
+            background: linear-gradient(to bottom, #ED2939 50%, #FFFFFF 50%);
+            position: relative;
+        }
+        
+        .flag.singapore::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 50%;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flag.singapore::after {
+            content: "★";
+            position: absolute;
+            color: #ED2939;
+            font-size: 8px;
+            top: 3px;
+            left: 3px;
+        }
+        
+        .flag.japan {
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flag.japan::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #BC002D;
+            border-radius: 50%;
+        }
+        
+        .flag.korea {
+            background: #FFFFFF;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flag.korea::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, #000000 0%, #000000 30%, transparent 30%),
+                linear-gradient(45deg, transparent 45%, #000000 45%, #000000 55%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, #000000 45%, #000000 55%, transparent 55%),
+                linear-gradient(135deg, #CD2E3A 0%, #CD2E3A 50%, #0047A0 50%, #0047A0 100%);
+            border-radius: 3px;
+        }
+        
+        .flag.usa {
+            background: 
+                linear-gradient(to bottom, 
+                    #B31942 7.7%, #FFFFFF 7.7%, #FFFFFF 15.4%, 
+                    #B31942 15.4%, #B31942 23.1%, #FFFFFF 23.1%, 
+                    #FFFFFF 30.8%, #B31942 30.8%, #B31942 38.5%, 
+                    #FFFFFF 38.5%, #FFFFFF 46.2%, #B31942 46.2%, 
+                    #B31942 53.9%, #FFFFFF 53.9%, #FFFFFF 61.6%, 
+                    #B31942 61.6%, #B31942 69.3%, #FFFFFF 69.3%, 
+                    #FFFFFF 77%, #B31942 77%, #B31942 84.7%, 
+                    #FFFFFF 84.7%, #FFFFFF 92.4%, #B31942 92.4%);
+            position: relative;
+        }
+        
+        .flag.usa::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 53.8%;
+            background: #0A3161;
+        }
+        
+        .flag.usa::after {
+            content: "★";
+            position: absolute;
+            color: #FFFFFF;
+            font-size: 6px;
+            top: 2px;
+            left: 2px;
+        }
+        
+        .features-list {
+            text-align: left;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .feature i {
+            color: #4CAF50;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .order-btn {
+            background: linear-gradient(45deg, #FF9800, #F44336);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: auto;
+        }
+        
+        .order-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .images-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .image-placeholder {
+            flex: 1;
+            min-width: 280px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .telegram {
+            background: #0088cc;
+        }
+        
+        .messenger {
+            background: #006AFF;
+        }
+        
+        .download {
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        
+        .centered-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .apk-download {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1>JVPN SHOP</h1>
+            <p class="subtitle">Premium VPN Services for Secure Browsing</p>
+            <a href="#" class="download-btn">
+                <i class="fas fa-download"></i> Download APK
+            </a>
+        </header>
+        
+        <div class="clock-container">
+            <div id="digital-clock">Loading...</div>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-users"></i> Online Users</h2>
+            <div class="centered-content">
+                <div class="online-users">
+                    <div class="user-indicator"></div>
+                    <p>Online Users</p>
+                </div>
+                <button class="section-btn">View Online Users</button>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> How To Use</h2>
+            <div class="centered-content">
+                <p>Learn how to set up and use JVPN with our comprehensive guides.</p>
+                <button class="section-btn">View How To Use Guide</button>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-sim-card"></i> SIM & PACKAGE</h2>
+            <div class="centered-content">
+                <p>Information about supported SIM cards and data packages.</p>
+                <button class="section-btn">View SIM & Package Info</button>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-crown"></i> VIP PLANS</h2>
+            <div class="plans-container">
+                <div class="plan">
+                    <h3>VIP PLAN 1</h3>
+                    <div class="plan-price">50 THB</div>
+                    <div class="plan-duration">1 Month</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt"></i> 1 ID For 1 Device</div>
+                        <div class="feature"><i class="fas fa-server"></i> 10+ Servers</div>
+                        <div class="feature"><i class="fas fa-gamepad"></i> Game Servers</div>
+                        <div class="feature"><i class="fas fa-tachometer-alt"></i> Low Ping</div>
+                        <div class="feature"><i class="fas fa-ban"></i> No Ads</div>
+                        <div class="feature"><i class="fas fa-hdd"></i> 100 TB For Per Month</div>
+                        <div class="feature"><i class="fas fa-infinity"></i> Unlimited Bandwidth</div>
+                        <div class="feature"><i class="fas fa-bolt"></i> 1-100 Mbps Speed</div>
+                    </div>
+                    
+                    <button class="order-btn">Order Now</button>
+                </div>
+                
+                <div class="plan">
+                    <h3>VIP PLAN 2</h3>
+                    <div class="plan-price">100 THB</div>
+                    <div class="plan-duration">2 Months</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt"></i> 1 ID For 1 Device</div>
+                        <div class="feature"><i class="fas fa-server"></i> 10+ Servers</div>
+                        <div class="feature"><i class="fas fa-gamepad"></i> Game Servers</div>
+                        <div class="feature"><i class="fas fa-tachometer-alt"></i> Low Ping</div>
+                        <div class="feature"><i class="fas fa-ban"></i> No Ads</div>
+                        <div class="feature"><i class="fas fa-hdd"></i> 100 TB For Per Month</div>
+                        <div class="feature"><i class="fas fa-infinity"></i> Unlimited Bandwidth</div>
+                        <div class="feature"><i class="fas fa-bolt"></i> 1-100 Mbps Speed</div>
+                    </div>
+                    
+                    <button class="order-btn">Order Now</button>
+                </div>
+                
+                <div class="plan">
+                    <h3>VIP PLAN 3</h3>
+                    <div class="plan-price">150 THB</div>
+                    <div class="plan-duration">3 Months</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt"></i> 1 ID For 1 Device</div>
+                        <div class="feature"><i class="fas fa-server"></i> 10+ Servers</div>
+                        <div class="feature"><i class="fas fa-gamepad"></i> Game Servers</div>
+                        <div class="feature"><i class="fas fa-tachometer-alt"></i> Low Ping</div>
+                        <div class="feature"><i class="fas fa-ban"></i> No Ads</div>
+                        <div class="feature"><i class="fas fa-hdd"></i> 100 TB For Per Month</div>
+                        <div class="feature"><i class="fas fa-infinity"></i> Unlimited Bandwidth</div>
+                        <div class="feature"><i class="fas fa-bolt"></i> 1-100 Mbps Speed</div>
+                    </div>
+                    
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-images"></i> Promotional Images</h2>
+            <div class="images-container">
+                <div class="image-placeholder">
+                    <p>Promotional Image 1</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>Promotional Image 2</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-sign-in-alt"></i> How To Login Member</h2>
+            <div class="centered-content">
+                <p>Watch this video to learn how to login to your JVPN member account:</p>
+                <div class="video-container">
+                    <!-- YouTube video will be embedded here -->
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: rgba(0,0,0,0.5);">
+                        <p>YouTube Video Embed Area</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 JVPN Shop. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="#" class="floating-btn messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a href="#" class="floating-btn download">
+            <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+    <script>
+        // Digital Clock Function
+        function updateClock() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const dateTimeString = now.toLocaleDateString('en-US', options);
+            document.getElementById('digital-clock').textContent = dateTimeString;
+        }
+        
+        // Update clock immediately and then every second
+        updateClock();
+        setInterval(updateClock, 1000);
+        
+        // Add animation to order buttons
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.innerHTML = 'Redirecting...';
+                setTimeout(() => {
+                    this.innerHTML = 'Order Now';
+                    alert('Redirecting to order page...');
+                }, 1000);
+            });
+        });
+        
+        // Add functionality to section buttons
+        document.querySelectorAll('.section-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('This feature will be implemented soon!');
+            });
+        });
+        
+        // 7-day color rotation system
+        const colorSchemes = [
+            { primary: '#1a2a6c', secondary: '#b21f1f', accent: '#fdbb2d' }, // Original
+            { primary: '#1e3c72', secondary: '#2a5298', accent: '#1e3c72' }, // Blue
+            { primary: '#614385', secondary: '#516395', accent: '#614385' }, // Purple
+            { primary: '#4776E6', secondary: '#8E54E9', accent: '#4776E6' }, // Blue-Purple
+            { primary: '#FF512F', secondary: '#DD2476', accent: '#FF512F' }, // Red-Pink
+            { primary: '#FF5F6D', secondary: '#FFC371', accent: '#FF5F6D' }, // Orange-Yellow
+            { primary: '#11998e', secondary: '#38ef7d', accent: '#11998e' }  // Green
+        ];
+        
+        function updateColors() {
+            const today = new Date().getDay(); // 0-6 (Sunday-Saturday)
+            const colors = colorSchemes[today];
+            
+            document.documentElement.style.setProperty('--primary-color', colors.primary);
+            document.documentElement.style.setProperty('--secondary-color', colors.secondary);
+            document.documentElement.style.setProperty('--accent-color', colors.accent);
+        }
+        
+        // Update colors immediately and then every minute
+        updateColors();
+        setInterval(updateColors, 60000);
+    </script>
+</body>
+</html>
