@@ -1,16 +1,936 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVPN - Premium VPN Services | JVPN Shop</title>
+    <meta name="description" content="JVPN offers premium VPN services for secure browsing. Download JVPN APK and get access to multiple servers with unlimited bandwidth. JVPN Shop provides the best VPN solutions.">
+    <meta name="keywords" content="JVPN, JVPN Shop, VPN, secure browsing, download JVPN, JVPN APK, premium VPN, Thailand VPN, Myanmar VPN">
+    <meta name="author" content="JVPN Shop">
+    <link rel="canonical" href="https://jvpn.shop/" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JVPN - Premium VPN Services | JVPN Shop">
+    <meta property="og:description" content="JVPN offers premium VPN services for secure browsing. Download JVPN APK and get access to multiple servers with unlimited bandwidth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jvpn.shop/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/icon.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JVPN - Premium VPN Services | JVPN Shop">
+    <meta name="twitter:description" content="JVPN offers premium VPN services for secure browsing. Download JVPN APK and get access to multiple servers with unlimited bandwidth.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/icon.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/icon.png" type="image/png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JVPN Shop",
+      "url": "https://jvpn.shop/",
+      "logo": "https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/icon.png",
+      "description": "Premium VPN Services for Secure Browsing",
+      "sameAs": [
+        "https://t.me/jk_vipvpn_bot",
+        "https://m.me/juehtet2025"
+      ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a2a6c;
+            --secondary-color: #b21f1f;
+            --accent-color: #fdbb2d;
+            --bg-color: #fff;
+            --text-color: #333;
+            --section-bg: rgba(255, 255, 255, 0.9);
+            --header-bg: rgba(0, 0, 0, 0.7);
+            --clock-bg: rgba(0, 0, 0, 0.6);
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-bottom: 80px;
+            transition: background 1s ease, color 0.5s ease;
+        }
+        
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #fff;
+            --section-bg: rgba(0, 0, 0, 0.7);
+            --header-bg: rgba(0, 0, 0, 0.8);
+            --clock-bg: rgba(0, 0, 0, 0.6);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: var(--header-bg);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .clock-container {
+            background: var(--clock-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clock-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: clock-shine 3s infinite linear;
+        }
+        
+        @keyframes clock-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        #digital-clock {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            animation: clock-pulse 2s infinite alternate;
+        }
+        
+        @keyframes clock-pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+        
+        .section {
+            background: var(--section-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        .apk-download {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .apk-info {
+            width: 100%;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .online-users {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .user-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .section-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .section-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .plan {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body.dark-mode .plan {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .plan:hover {
+            transform: translateY(-10px);
+            border-color: #4CAF50;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .plan h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        
+        .plan-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .plan-duration {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .flags-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .flag {
+            width: 30px;
+            height: 20px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .flag.thai {
+            background-image: url('https://flagcdn.com/w40/th.png');
+        }
+        
+        .flag.singapore {
+            background-image: url('https://flagcdn.com/w40/sg.png');
+        }
+        
+        .flag.japan {
+            background-image: url('https://flagcdn.com/w40/jp.png');
+        }
+        
+        .flag.korea {
+            background-image: url('https://flagcdn.com/w40/kr.png');
+        }
+        
+        .flag.usa {
+            background-image: url('https://flagcdn.com/w40/us.png');
+        }
+        
+        .features-list {
+            text-align: left;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .feature i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            animation: icon-color-change 5s infinite alternate;
+        }
+        
+        @keyframes icon-color-change {
+            0% { color: #4CAF50; }
+            25% { color: #2196F3; }
+            50% { color: #FF9800; }
+            75% { color: #9C27B0; }
+            100% { color: #F44336; }
+        }
+        
+        .order-btn {
+            background: linear-gradient(45deg, #FF9800, #F44336);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: auto;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .order-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .images-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .promo-image {
+            flex: 1;
+            min-width: 280px;
+            height: 500px; /* Adjusted height for better display */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f5f5f5;
+        }
+        
+        .promo-image.p1 {
+            background-image: url('https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/p1.png');
+        }
+        
+        .promo-image.p2 {
+            background-image: url('https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/p2.png');
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 20px 0;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .telegram {
+            background: #0088cc;
+        }
+        
+        .messenger {
+            background: #006AFF;
+        }
+        
+        .download {
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+        }
+        
+        .dark-mode-toggle {
+            background: linear-gradient(45deg, #333, #555);
+        }
+        
+        .language-toggle {
+            background: linear-gradient(45deg, #9C27B0, #673AB7);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: var(--header-bg);
+            border-radius: 10px;
+            color: #fff;
+        }
+        
+        .centered-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .apk-download {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .promo-image {
+                height: 300px; /* Adjusted for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/JVPNSHOP/jvpnshop/main/File/icon.png" alt="JVPN Logo - Premium VPN Services">
+            </div>
+            <h1 data-i18n="title">JVPN SHOP</h1>
+            <p class="subtitle" data-i18n="subtitle">Premium VPN Services for Secure Browsing</p>
+            <a href="https://github.com/THANDARLIN2015/JKVPN/releases/download/V2.2.0/JK.VIP.VPN_2.2.0.apk" class="download-btn">
+                <i class="fas fa-download"></i> <span data-i18n="downloadApk">Download JVPN APK</span>
+            </a>
+        </header>
+        
+        <div class="clock-container">
+            <div id="digital-clock">Loading...</div>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-users"></i> <span data-i18n="onlineUsers">JVPN Online Users</span></h2>
+            <div class="centered-content">
+                <div class="online-users">
+                    <div class="user-indicator"></div>
+                    <p data-i18n="onlineUsers">JVPN Online Users</p>
+                </div>
+                <a href="http://vip-users.kindvpn.site:81/JK-VIP.php" class="section-btn" data-i18n="viewOnlineUsers">View JVPN Online Users</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> <span data-i18n="howToUse">How To Use JVPN</span></h2>
+            <div class="centered-content">
+                <p data-i18n="howToUseDesc">Learn how to set up and use JVPN with our comprehensive guides.</p>
+                <a href="https://thandarlin2015.github.io/How-To-Use/" class="section-btn" data-i18n="viewHowToUse">View JVPN How To Use Guide</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-sim-card"></i> <span data-i18n="simPackage">JVPN SIM & PACKAGE</span></h2>
+            <div class="centered-content">
+                <p data-i18n="simPackageDesc">Information about supported SIM cards and data packages for JVPN.</p>
+                <a href="https://thandarlin2015.github.io/SIM/" class="section-btn" data-i18n="viewSimPackage">View JVPN SIM & Package Info</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-crown"></i> <span data-i18n="vipPlans">JVPN VIP PLANS</span></h2>
+            <div class="plans-container">
+                <div class="plan">
+                    <h3 data-i18n="vipPlan1">JVPN VIP PLAN 1</h3>
+                    <div class="plan-price">50 THB</div>
+                    <div class="plan-duration" data-i18n="oneMonth">1 Month</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt feature-icon"></i> <span data-i18n="oneDevice">1 JVPN ID For 1 Device</span></div>
+                        <div class="feature"><i class="fas fa-server feature-icon"></i> <span data-i18n="tenServers">10+ JVPN Servers</span></div>
+                        <div class="feature"><i class="fas fa-gamepad feature-icon"></i> <span data-i18n="gameServers">JVPN Game Servers</span></div>
+                        <div class="feature"><i class="fas fa-tachometer-alt feature-icon"></i> <span data-i18n="lowPing">Low Ping with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-ban feature-icon"></i> <span data-i18n="noAds">No Ads in JVPN</span></div>
+                        <div class="feature"><i class="fas fa-hdd feature-icon"></i> <span data-i18n="hundredTB">100 TB For Per Month with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-infinity feature-icon"></i> <span data-i18n="unlimitedBandwidth">Unlimited Bandwidth with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-bolt feature-icon"></i> <span data-i18n="speed">1-100 Mbps JVPN Speed</span></div>
+                    </div>
+                    
+                    <a href="https://m.me/juehtet2025" class="order-btn" data-i18n="orderNow">Order JVPN Now</a>
+                </div>
+                
+                <div class="plan">
+                    <h3 data-i18n="vipPlan2">JVPN VIP PLAN 2</h3>
+                    <div class="plan-price">100 THB</div>
+                    <div class="plan-duration" data-i18n="twoMonths">2 Months</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt feature-icon"></i> <span data-i18n="oneDevice">1 JVPN ID For 1 Device</span></div>
+                        <div class="feature"><i class="fas fa-server feature-icon"></i> <span data-i18n="tenServers">10+ JVPN Servers</span></div>
+                        <div class="feature"><i class="fas fa-gamepad feature-icon"></i> <span data-i18n="gameServers">JVPN Game Servers</span></div>
+                        <div class="feature"><i class="fas fa-tachometer-alt feature-icon"></i> <span data-i18n="lowPing">Low Ping with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-ban feature-icon"></i> <span data-i18n="noAds">No Ads in JVPN</span></div>
+                        <div class="feature"><i class="fas fa-hdd feature-icon"></i> <span data-i18n="hundredTB">100 TB For Per Month with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-infinity feature-icon"></i> <span data-i18n="unlimitedBandwidth">Unlimited Bandwidth with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-bolt feature-icon"></i> <span data-i18n="speed">1-100 Mbps JVPN Speed</span></div>
+                    </div>
+                    
+                    <a href="https://m.me/juehtet2025" class="order-btn" data-i18n="orderNow">Order JVPN Now</a>
+                </div>
+                
+                <div class="plan">
+                    <h3 data-i18n="vipPlan3">JVPN VIP PLAN 3</h3>
+                    <div class="plan-price">150 THB</div>
+                    <div class="plan-duration" data-i18n="threeMonths">3 Months</div>
+                    
+                    <div class="flags-container">
+                        <div class="flag thai" title="Thailand"></div>
+                        <div class="flag singapore" title="Singapore"></div>
+                        <div class="flag japan" title="Japan"></div>
+                        <div class="flag korea" title="Korea"></div>
+                        <div class="flag usa" title="USA"></div>
+                    </div>
+                    
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-mobile-alt feature-icon"></i> <span data-i18n="oneDevice">1 JVPN ID For 1 Device</span></div>
+                        <div class="feature"><i class="fas fa-server feature-icon"></i> <span data-i18n="tenServers">10+ JVPN Servers</span></div>
+                        <div class="feature"><i class="fas fa-gamepad feature-icon"></i> <span data-i18n="gameServers">JVPN Game Servers</span></div>
+                        <div class="feature"><i class="fas fa-tachometer-alt feature-icon"></i> <span data-i18n="lowPing">Low Ping with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-ban feature-icon"></i> <span data-i18n="noAds">No Ads in JVPN</span></div>
+                        <div class="feature"><i class="fas fa-hdd feature-icon"></i> <span data-i18n="hundredTB">100 TB For Per Month with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-infinity feature-icon"></i> <span data-i18n="unlimitedBandwidth">Unlimited Bandwidth with JVPN</span></div>
+                        <div class="feature"><i class="fas fa-bolt feature-icon"></i> <span data-i18n="speed">1-100 Mbps JVPN Speed</span></div>
+                    </div>
+                    
+                    <a href="https://m.me/juehtet2025" class="order-btn" data-i18n="orderNow">Order JVPN Now</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-images"></i> <span data-i18n="promoImages">JVPN Promotional Images</span></h2>
+            <div class="images-container">
+                <div class="promo-image p1"></div>
+                <div class="promo-image p2"></div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-sign-in-alt"></i> <span data-i18n="howToLogin">How To Login JVPN Member</span></h2>
+            <div class="centered-content">
+                <p data-i18n="loginDesc">Watch this video to learn how to login to your JVPN member account:</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/O4CYlx89GFE" title="How to Login to JVPN Member Account" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 JVPN Shop. <span data-i18n="rightsReserved">All rights reserved.</span></p>
+        </footer>
+    </div>
+    
+    <div class="floating-buttons">
+        <a href="https://t.me/jk_vipvpn_bot" class="floating-btn telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://m.me/juehtet2025" class="floating-btn messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a href="https://github.com/THANDARLIN2015/JKVPN/releases/download/V2.2.0/JK.VIP.VPN_2.2.0.apk" class="floating-btn download">
+            <i class="fas fa-download"></i>
+        </a>
+        <div class="floating-btn dark-mode-toggle" id="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="floating-btn language-toggle" id="language-toggle">
+            <i class="fas fa-language"></i>
+        </div>
+    </div>
 
-<!--
-**JVPNSHOP/jvpnshop** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    <script>
+        // Digital Clock Function
+        function updateClock() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const dateTimeString = now.toLocaleDateString('en-US', options);
+            document.getElementById('digital-clock').textContent = dateTimeString;
+        }
+        
+        // Update clock immediately and then every second
+        updateClock();
+        setInterval(updateClock, 1000);
+        
+        // Add animation to order buttons
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.innerHTML = 'Redirecting...';
+                setTimeout(() => {
+                    this.innerHTML = 'Order JVPN Now';
+                }, 1000);
+            });
+        });
+        
+        // 7-day color rotation system
+        const colorSchemes = [
+            { primary: '#1a2a6c', secondary: '#b21f1f', accent: '#fdbb2d' }, // Original
+            { primary: '#1e3c72', secondary: '#2a5298', accent: '#1e3c72' }, // Blue
+            { primary: '#614385', secondary: '#516395', accent: '#614385' }, // Purple
+            { primary: '#4776E6', secondary: '#8E54E9', accent: '#4776E6' }, // Blue-Purple
+            { primary: '#FF512F', secondary: '#DD2476', accent: '#FF512F' }, // Red-Pink
+            { primary: '#FF5F6D', secondary: '#FFC371', accent: '#FF5F6D' }, // Orange-Yellow
+            { primary: '#11998e', secondary: '#38ef7d', accent: '#11998e' }  // Green
+        ];
+        
+        function updateColors() {
+            const today = new Date().getDay(); // 0-6 (Sunday-Saturday)
+            const colors = colorSchemes[today];
+            
+            document.documentElement.style.setProperty('--primary-color', colors.primary);
+            document.documentElement.style.setProperty('--secondary-color', colors.secondary);
+            document.documentElement.style.setProperty('--accent-color', colors.accent);
+        }
+        
+        // Update colors immediately and then every minute
+        updateColors();
+        setInterval(updateColors, 60000);
+        
+        // Dark/Light Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeIcon = darkModeToggle.querySelector('i');
+        
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeIcon.classList.remove('fa-moon');
+                darkModeIcon.classList.add('fa-sun');
+            } else {
+                darkModeIcon.classList.remove('fa-sun');
+                darkModeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // Language Switcher
+        const languageToggle = document.getElementById('language-toggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Language translations
+        const translations = {
+            'en': {
+                'title': 'JVPN SHOP',
+                'subtitle': 'Premium VPN Services for Secure Browsing',
+                'downloadApk': 'Download JVPN APK',
+                'onlineUsers': 'JVPN Online Users',
+                'viewOnlineUsers': 'View JVPN Online Users',
+                'howToUse': 'How To Use JVPN',
+                'howToUseDesc': 'Learn how to set up and use JVPN with our comprehensive guides.',
+                'viewHowToUse': 'View JVPN How To Use Guide',
+                'simPackage': 'JVPN SIM & PACKAGE',
+                'simPackageDesc': 'Information about supported SIM cards and data packages for JVPN.',
+                'viewSimPackage': 'View JVPN SIM & Package Info',
+                'vipPlans': 'JVPN VIP PLANS',
+                'vipPlan1': 'JVPN VIP PLAN 1',
+                'vipPlan2': 'JVPN VIP PLAN 2',
+                'vipPlan3': 'JVPN VIP PLAN 3',
+                'oneMonth': '1 Month',
+                'twoMonths': '2 Months',
+                'threeMonths': '3 Months',
+                'oneDevice': '1 JVPN ID For 1 Device',
+                'tenServers': '10+ JVPN Servers',
+                'gameServers': 'JVPN Game Servers',
+                'lowPing': 'Low Ping with JVPN',
+                'noAds': 'No Ads in JVPN',
+                'hundredTB': '100 TB For Per Month with JVPN',
+                'unlimitedBandwidth': 'Unlimited Bandwidth with JVPN',
+                'speed': '1-100 Mbps JVPN Speed',
+                'orderNow': 'Order JVPN Now',
+                'promoImages': 'JVPN Promotional Images',
+                'promoImage1': 'JVPN Promotional Image 1',
+                'promoImage2': 'JVPN Promotional Image 2',
+                'howToLogin': 'How To Login JVPN Member',
+                'loginDesc': 'Watch this video to learn how to login to your JVPN member account:',
+                'videoPlaceholder': 'YouTube Video Embed Area',
+                'rightsReserved': 'All rights reserved.'
+            },
+            'th': {
+                'title': 'ร้าน JVPN',
+                'subtitle': 'บริการ VPN พรีเมี่ยมสำหรับการท่องเว็บที่ปลอดภัย',
+                'downloadApk': 'ดาวน์โหลด JVPN APK',
+                'onlineUsers': 'ผู้ใช้ JVPN ออนไลน์',
+                'viewOnlineUsers': 'ดูผู้ใช้ JVPN ออนไลน์',
+                'howToUse': 'วิธีใช้ JVPN',
+                'howToUseDesc': 'เรียนรู้วิธีตั้งค่าและใช้ JVPN ด้วยคำแนะนำที่ครอบคลุมของเรา',
+                'viewHowToUse': 'ดูคำแนะนำวิธีใช้ JVPN',
+                'simPackage': 'ซิมและแพ็กเกจ JVPN',
+                'simPackageDesc': 'ข้อมูลเกี่ยวกับซิมการ์ดและแพ็กเกจข้อมูลที่รองรับสำหรับ JVPN',
+                'viewSimPackage': 'ดูข้อมูลซิมและแพ็กเกจ JVPN',
+                'vipPlans': 'แผน VIP JVPN',
+                'vipPlan1': 'แผน VIP JVPN 1',
+                'vipPlan2': 'แผน VIP JVPN 2',
+                'vipPlan3': 'แผน VIP JVPN 3',
+                'oneMonth': '1 เดือน',
+                'twoMonths': '2 เดือน',
+                'threeMonths': '3 เดือน',
+                'oneDevice': '1 JVPN ID สำหรับ 1 อุปกรณ์',
+                'tenServers': 'เซิร์ฟเวอร์ JVPN 10+',
+                'gameServers': 'เซิร์ฟเวอร์เกม JVPN',
+                'lowPing': 'ปิงต่ำกับ JVPN',
+                'noAds': 'ไม่มีโฆษณาใน JVPN',
+                'hundredTB': '100 TB ต่อเดือนกับ JVPN',
+                'unlimitedBandwidth': 'แบนด์วิดท์ไม่จำกัดกับ JVPN',
+                'speed': 'ความเร็ว JVPN 1-100 Mbps',
+                'orderNow': 'สั่งซื้อ JVPN ตอนนี้',
+                'promoImages': 'รูปภาพโปรโมชั่น JVPN',
+                'promoImage1': 'รูปภาพโปรโมชั่น JVPN 1',
+                'promoImage2': 'รูปภาพโปรโมชั่น JVPN 2',
+                'howToLogin': 'วิธีเข้าสู่ระบบสมาชิก JVPN',
+                'loginDesc': 'ดูวิดีโอนี้เพื่อเรียนรู้วิธีเข้าสู่ระบบบัญชีสมาชิก JVPN ของคุณ:',
+                'videoPlaceholder': 'พื้นที่สำหรับวิดีโอ YouTube',
+                'rightsReserved': 'สงวนลิขสิทธิ์'
+            },
+            'my': {
+                'title': 'JVPN ဆိုင်',
+                'subtitle': 'လုံခြုံသော အင်တာနက်သုံးစွဲမှုအတွက် အဆင့်မြင့် VPN ဝန်ဆောင်မှုများ',
+                'downloadApk': 'JVPN APK ဒေါင်းလုဒ်',
+                'onlineUsers': 'JVPN အွန်လိုင်းအသုံးပြုသူများ',
+                'viewOnlineUsers': 'JVPN အွန်လိုင်းအသုံးပြုသူများကြည့်ရန်',
+                'howToUse': 'JVPN အသုံးပြုနည်း',
+                'howToUseDesc': 'ကျွန်ုပ်တို့၏ ပြည့်စုံသောလမ်းညွှန်ချက်များဖြင့် JVPN ကို မည်သို့သတ်မှတ်အသုံးပြုရမည်ကို လေ့လာပါ။',
+                'viewHowToUse': 'JVPN အသုံးပြုနည်းလမ်းညွှန်ကြည့်ရန်',
+                'simPackage': 'JVPN SIM နှင့် ပက်ကေ့ချ်',
+                'simPackageDesc': 'JVPN အတွက် ပံ့ပိုးထားသော SIM ကတ်များနှင့် ဒေတာပက်ကေ့ချ်များအကြောင်း အချက်အလက်များ။',
+                'viewSimPackage': 'JVPN SIM နှင့် ပက်ကေ့ချ် အချက်အလက်ကြည့်ရန်',
+                'vipPlans': 'JVPN VIP ပက်ကေ့ချ်များ',
+                'vipPlan1': 'JVPN VIP ပက်ကေ့ချ် ၁',
+                'vipPlan2': 'JVPN VIP ပက်ကေ့ချ် ၂',
+                'vipPlan3': 'JVPN VIP ပက်ကေ့ချ် ၃',
+                'oneMonth': '၁ လ',
+                'twoMonths': '၂ လ',
+                'threeMonths': '၃ လ',
+                'oneDevice': 'စက်တစ်လုံးအတွက် JVPN ID တစ်ခု',
+                'tenServers': 'JVPN ဆာဗာများ ၁၀+',
+                'gameServers': 'JVPN ဂိမ်းဆာဗာများ',
+                'lowPing': 'JVPN ဖြင့် ပင် နိမ့်',
+                'noAds': 'JVPN တွင် ကြော်ငြာမရှိ',
+                'hundredTB': 'JVPN ဖြင့် တစ်လလျှင် ၁၀၀ TB',
+                'unlimitedBandwidth': 'JVPN ဖြင့် အကန့်အသတ်မရှိ ဘန်းဝစ်သ်',
+                'speed': 'JVPN ၁-၁၀၀ Mbps အမြန်နှုန်း',
+                'orderNow': 'JVPN ယခုမှာယူရန်',
+                'promoImages': 'JVPN ကြော်ငြာပုံများ',
+                'promoImage1': 'JVPN ကြော်ငြာပုံ ၁',
+                'promoImage2': 'JVPN ကြော်ငြာပုံ ၂',
+                'howToLogin': 'JVPN အသင်းဝင်အကောင့်ဝင်ရန်',
+                'loginDesc': 'သင်၏ JVPN အသင်းဝင်အကောင့်သို့ ဝင်ရောက်နည်းကို သင်ယူရန် ဤဗီဒီယိုကိုကြည့်ပါ:',
+                'videoPlaceholder': 'YouTube ဗီဒီယိုထည့်ရန် နေရာ',
+                'rightsReserved': 'အခွင့်အရေးအားလုံးလုံခြုံသည်။'
+            }
+        };
+        
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        // Language toggle functionality
+        let languageIndex = 0;
+        const languages = ['en', 'th', 'my'];
+        
+        languageToggle.addEventListener('click', function() {
+            languageIndex = (languageIndex + 1) % languages.length;
+            changeLanguage(languages[languageIndex]);
+        });
+    </script>
+</body>
+</html>
